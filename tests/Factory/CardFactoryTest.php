@@ -30,7 +30,7 @@ final class CardFactoryTest extends TestCase
             ->expects($this->exactly(count($fieldContents)))
             ->method('create')
             ->withConsecutive(...array_map(function ($fieldContent) {
-                return [ $fieldContent ];
+                return [$fieldContent];
             }, $fieldContents))
             ->willReturn(new Field(100))
         ;

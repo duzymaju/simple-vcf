@@ -17,12 +17,12 @@ final class FieldTest extends TestCase
         $field
             ->setName('NAME')
             ->setValue('Value')
-            ->setParams([ $param1, $param2 ])
+            ->setParams([$param1, $param2])
             ->addParam($param3)
         ;
         $this->assertEquals('NAME', $field->getName());
         $this->assertEquals('Value', $field->getValue());
-        $this->assertEquals([ $param1, $param2, $param3 ], $field->getParams());
+        $this->assertEquals([$param1, $param2, $param3], $field->getParams());
     }
 
     /**

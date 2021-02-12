@@ -42,6 +42,8 @@ interface CardListInterface extends ToStringInterface
     /**
      * Find by name
      *
+     * @param string $name name
+     *
      * @return CardInterface|null
      */
     public function findByName($name);

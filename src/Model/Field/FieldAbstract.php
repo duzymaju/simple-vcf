@@ -109,9 +109,7 @@ abstract class FieldAbstract implements FieldInterface
      */
     public function toString()
     {
-        $field = $this->getMultiLineField($this->getName() . $this->getParamsString() . ':' . $this->value);
-
-        return $field;
+        return $this->getMultiLineField($this->getName() . $this->getParamsString() . ':' . $this->value);
     }
 
     /**

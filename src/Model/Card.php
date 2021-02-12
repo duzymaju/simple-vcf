@@ -51,7 +51,7 @@ class Card implements CardInterface
     public function addField(FieldInterface $field)
     {
         $this->fields[] = $field;
-        $this->resetCaches([ $field ]);
+        $this->resetCaches([$field]);
 
         return $this;
     }
@@ -77,6 +77,7 @@ class Card implements CardInterface
             /** @var FieldInterface $className */
             return $className::isRequired();
         });
+
         foreach ($requiredFields as $requiredField) {
             $name = $requiredField::getStaticName();
             if (!array_key_exists($name, $fieldCounters) || $fieldCounters[$name] < 1) {
@@ -89,6 +90,7 @@ class Card implements CardInterface
             /** @var FieldInterface $className */
             return $className::isSingle();
         });
+
         foreach ($singleFields as $singleField) {
             $name = $singleField::getStaticName();
             if (array_key_exists($name, $fieldCounters) && $fieldCounters[$name] > 1) {

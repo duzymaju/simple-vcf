@@ -36,7 +36,7 @@ final class FieldFactoryTest extends TestCase
             ->expects($this->exactly(count($params)))
             ->method('create')
             ->withConsecutive(...array_map(function ($param) {
-                return [ $param ];
+                return [$param];
             }, $params))
             ->willReturn(new Param())
         ;

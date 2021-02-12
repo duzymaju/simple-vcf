@@ -49,9 +49,8 @@ class FileStorage
         if ($content === false) {
             throw new InvalidResourceException(sprintf('Content from file %s isn\'t readable.', $this->filePath));
         }
-        $cardList = $this->cardListFactory->create($content);
 
-        return $cardList;
+        return $this->cardListFactory->create($content);
     }
 
     /**

@@ -32,7 +32,7 @@ final class CardListFactoryTest extends TestCase
             ->expects($this->exactly(count($cardContents)))
             ->method('create')
             ->withConsecutive(...array_map(function ($cardContent) {
-                return [ $cardContent ];
+                return [$cardContent];
             }, $cardContents))
             ->willReturnCallback(function ($cardContent) {
                 return new CardStub(count($cardContent) > 0);

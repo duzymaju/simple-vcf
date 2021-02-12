@@ -69,6 +69,8 @@ class CardList implements CardListInterface
     /**
      * Find by name
      *
+     * @param string $name name
+     *
      * @return CardInterface|null
      */
     public function findByName($name)
@@ -82,6 +84,8 @@ class CardList implements CardListInterface
                 return $card;
             }
         }
+
+        return null;
     }
 
     /**
@@ -89,9 +93,11 @@ class CardList implements CardListInterface
      *
      * @return CardInterface[]|null
      */
-    public function getWholeRest() {
+    public function getWholeRest()
+    {
         $cardsCopy = $this->cardsCopy;
         $this->cardsCopy = null;
+
         return $cardsCopy;
     }
 

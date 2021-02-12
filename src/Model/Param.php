@@ -70,9 +70,8 @@ class Param implements ParamInterface
         }
 
         $value = $this->hasSpecialChars() ? sprintf('"%s"', $this->value) : $this->value;
-        $param = empty($this->name) ? $value : $this->name . '=' . $value;
 
-        return $param;
+        return empty($this->name) ? $value : $this->name . '=' . $value;
     }
 
     /**
